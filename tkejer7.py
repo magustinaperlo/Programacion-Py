@@ -27,9 +27,9 @@ etiquet2.grid(row=2, column=0,padx=5,pady=5)
 etiquet_gen=Label(Ventana, font=("TimesNewRoman 9") , text ="Número Generado")
 etiquet_gen.grid(row=3, column=0,padx=5,pady=5)
 
-spinbox1=Spinbox(from_= -1000, to= 1000,textvariable= Num1)
+spinbox1=Spinbox(from_= -1000, to= 1000,textvariable= Num1,state="readonly")
 spinbox1.grid(row=1, column=1,padx=5,pady=5)
-spinbox2=Spinbox(from_= -1000, to= 1000,textvariable= Num2)
+spinbox2=Spinbox(from_= -1000, to= 1000,textvariable= Num2,state="readonly")
 spinbox2.grid(row=2, column=1,padx=5,pady=5)
 
 Generado=Entry(Ventana,textvariable=NumGen,font=("TimesNewRoman 9"))
