@@ -1,5 +1,6 @@
 from tkinter import *
 import tkinter
+from tkinter import messagebox
 
 
 Ventana = tkinter.Tk()
@@ -9,9 +10,20 @@ Ventana.config ( bg = "lightgrey" )
 def limpiar():
     pelicula.set("")
 
-def enviar():   
-    lista_peliculas.insert(END,pelicula.get())
-    limpiar()
+# def enviar():   
+#     lista_peliculas.insert(END,pelicula.get())
+#     limpiar()
+
+def enviar():
+    a = pelicula.get() #Se obtiene valor en Entry
+   #validamos el ingreso para no almacenar datos erróneos
+    if (a.isspace() or len(a) <= 1):
+        messagebox.showinfo(message="El nombre de la película no debe comenzar con un espacio", title="Error")
+        etiquetN.delete(0, END)
+    else:
+        lista_peliculas.insert(END, a) #Se inserta en Listbox
+        etiquetN.delete(0, END) #Se limpia el campo
+
 
 pelicula = StringVar()
 
